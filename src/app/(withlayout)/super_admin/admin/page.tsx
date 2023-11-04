@@ -1,3 +1,4 @@
+import ActionBar from '@/components/ui/ActionBar';
 import UMBreadCrumb from '@/components/ui/UMBreadCrumb';
 import { getUserInfo } from '@/services/auth.service';
 import { Button } from 'antd';
@@ -5,26 +6,29 @@ import Link from 'next/link';
 import React from 'react';
 
 const ManageAdminPage = () => {
-    const {role} = getUserInfo() as any;
+  const { role } = getUserInfo() as any;
 
-    return (
-        <div>
-            <UMBreadCrumb
+  return (
+    <div>
+      <UMBreadCrumb
         items={[
           {
             label: `${role}`,
             link: `/${role}`,
           },
-       
+
         ]}
       />
-            <h1>Manage Admin Page</h1>
-            <Link href="/super_admin/admin/create">
-            <Button>Create Admin</Button>
-            </Link>
-            
-        </div>
-    );
+      <ActionBar title="Admin List">
+        <Link href="/super_admin/admin/create">
+          <Button type='primary'>Create Admin</Button>
+        </Link>
+
+      </ActionBar>
+
+
+    </div>
+  );
 };
 
 export default ManageAdminPage;
