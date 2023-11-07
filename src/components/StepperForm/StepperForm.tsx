@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { Button, message, Steps, theme } from 'antd';
+import { Button, message, Steps,  } from 'antd';
 import { FormProvider, useForm } from 'react-hook-form';
 import { getFromLocalStorage, setToLocalStorage } from '@/utils/local-storage';
 import { useRouter } from 'next/navigation';
@@ -30,9 +30,12 @@ const StepperForm = ({ steps, submitHandler, navigateLink }: IStepsProps) => {
       : 0
   );
 
+
+
   useEffect(() => {
     setToLocalStorage("step", JSON.stringify({ step: current }))
   }, [current])
+
   const next = () => {
     setCurrent(current + 1);
   };

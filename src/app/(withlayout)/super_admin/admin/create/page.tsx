@@ -21,7 +21,7 @@ const CreateAdmin = () => {
             console.log(data);
 
         } catch (err: any) {
-            console.error(err.message)
+            console.error(err.message);
         }
     };
 
